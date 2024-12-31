@@ -1,0 +1,23 @@
+document.querySelector('.post-form button').addEventListener('click', function () {
+    const textarea = document.querySelector('.post-form textarea');
+    const postText = textarea.value.trim();
+  
+    if (postText) {
+      const postsSection = document.querySelector('.posts');
+      const newPost = document.createElement('div');
+      newPost.classList.add('post');
+      newPost.innerHTML = `
+        <h3>Anonymous</h3>
+        <p>${postText}</p>
+        <button>Like</button>
+        <button>Comment</button>
+      `;
+      postsSection.prepend(newPost);
+      textarea.value = '';
+    } else {
+      alert('Please write something before posting!');
+    }
+  });
+  
+  
+  
